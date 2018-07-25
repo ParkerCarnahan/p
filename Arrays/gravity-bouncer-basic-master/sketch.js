@@ -18,9 +18,8 @@ function setup() {
 	
 	// Initialize Global Variables
 	balls = [];
-	for (let n = 0; n < 800 ; n+= 50){
+	for (let n = 0; n < 1 ; n++){
 		balls.push(new ball(random(800), random(600)));
-		console.log(balls);
 	}
 }
 
@@ -32,9 +31,25 @@ function draw() {
 		balls[i].move();
 		balls[i].show();
 	}
-	
+	for(let i = 0; i < balls.length; i++){
+	if (balls.length > 250){
+		balls.splice(i, 1)
+	}
 }
 
-function keyPressed(){
-	ball.key();
 }
+
+function keyPressed() {
+	balls.push(new ball(mouseX, mouseY));
+}
+
+function mousePressed(){
+	for(let i = 0; i < balls.length; i++){
+	if (balls[i].clicked(mouseX, mouseY)){
+		balls.splice(i, 1);
+		
+	}
+}
+
+}
+
