@@ -13,9 +13,6 @@ let WHITE = "FFFFFF";
 function setup(){
     createCanvas(800,600)
     stars = [];
-    for (let n = 0; n < 7 ; n++){
-		stars.push(new star(random(800), random(600)));
-	}
 }
 
 function draw(){
@@ -31,14 +28,9 @@ function draw(){
 }
 
 function keyPressed(){
-    stars.push(new star(random(800),random(600) ))
+            stars.pop();
 }
 
 function mousePressed(){
-	for(let i = 0; i < stars.length; i++){
-	if (stars[i].clicked(mouseX, mouseY)){
-		stars.splice(i, 1);
-		
-	}
-}
+    stars.push(new star(mouseX,mouseY));
 }
