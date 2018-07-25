@@ -5,7 +5,7 @@ class ball{
         this.r = 20;
         this.ySpeed = 0;
         this.a = 0.5;
-        this.launchSpeed = -20;
+        this.launchSpeed = random(-30,-1);
     }
 
     move(){
@@ -24,10 +24,14 @@ class ball{
 	ellipse(this.x, this.y, 2 * this.r);
     }
 
-    key(){
-        if (keyIsPressed == 49){
-            new ball(random(800),random(600))
-            console.log(balls)
+    // daniel codes
+    clicked(x,y){
+        let d = dist(x, y, this.x, this.y)
+        if (d < this.r){   
+            return true;
+        } else {
+            return false;
         }
     }
+
 }
