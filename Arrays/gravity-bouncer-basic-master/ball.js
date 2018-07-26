@@ -2,10 +2,11 @@ class ball{
     constructor(x,y){
         this.x = x;
         this.y = y;
-        this.r = 20;
+        this.r = random(20);
+        this.xSpeed = random(10);
         this.ySpeed = 0;
         this.a = 0.5;
-        this.launchSpeed = random(-30,-1);
+        this.launchSpeed = random(-30, -10);
     }
 
     move(){
@@ -15,12 +16,17 @@ class ball{
         if (this.y + this.r > height) {
             this.ySpeed = this.launchSpeed; // Bounce
         }
+
+        this.x += this.xSpeed;
+		if (this.x < 0 || this.x > width) {
+			this.xSpeed = -this.xSpeed;
+		}
     }
 
     show(){
         	
 	// Draw Gravity Bouncer
-	fill(100);
+	fill("BLUE");
 	ellipse(this.x, this.y, 2 * this.r);
     }
 
