@@ -23,6 +23,10 @@ function draw(){
 
     for(let i = 0; i < stars.length; i++){
         stars[i].show();
+        
+    }
+    for(let i = 0; i < stars.length; i++){
+        line(stars[i].x,stars[i].y,stars[i].x, stars[i].y)
     }
 
 }
@@ -33,4 +37,5 @@ function keyPressed(){
 
 function mousePressed(){
     stars.push(new star(mouseX,mouseY));
+
 }
