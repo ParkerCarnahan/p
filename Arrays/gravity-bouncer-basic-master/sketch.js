@@ -7,6 +7,7 @@ let balls;
 let player;
 let count = 0;
 
+
 let GREY = 80;
 let RED = "#bb2a27";
 let GREEN = "#8cc542";
@@ -41,17 +42,29 @@ function draw() {
 	for(let i = 0; i < balls.length; i++){
 		balls[i].move();
 		balls[i].show();
+		if (balls[i].clicked(player[0].x, player[0].y)) {
+			balls.splice(i, 1)
+			balls.push(new ball(random(800), random(600)))
+			balls.push(new ball(random(800), random(600)))
+			count++
+			console.log(count)
+			
+		}
 	}
 	for(let i = 0; i < balls.length; i++){
 	if (balls.length > 250){
 		balls.splice(i, 1)
 	}
-
-	for(let i = 0; i < player.length; i++){
-		if (player[i].click(player[i].x,player[i].y)){
-			count + 1;
+	
+	if (count > 9) {
+		for(let i = 0; i < balls.length; i++){
+				balls.splice(i)
+				balls.push(new ball(random(800), random(600)))
 		}
+		alert('You Win!')
+		count = 0
 	}
+
 }
 }
 
