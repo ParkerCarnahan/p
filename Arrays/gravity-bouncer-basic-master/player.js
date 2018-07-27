@@ -52,12 +52,4 @@ class jumpingPlayer{
 		}
     }
     
-    click(x,y){
-        let d = dist(x,y,this.x,this.y)
-        if (d < this.x){
-            return true;
-        } else {
-            return false;
-        }
-    }
 }
