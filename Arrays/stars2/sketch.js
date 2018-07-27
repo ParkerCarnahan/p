@@ -5,6 +5,13 @@ let stars;
 let GREY = 80;
 let RED = "#bb2a27";
 let GREEN = "#8cc542";
+le"use strict"
+
+let stars;
+
+let GREY = 80;
+let RED = "#bb2a27";
+let GREEN = "#8cc542";
 let BLUE = "#28a9e0";
 let ORANGE = "#faaf3b";
 let BROWN = "#aa6c39";
@@ -21,12 +28,16 @@ function draw(){
     noStroke();
     fill(255);
 
+ 
     for(let i = 0; i < stars.length; i++){
         stars[i].show();
-        
-    }
-    for(let i = 0; i < stars.length; i++){
-        line(stars[i].x,stars[i].y,stars[i].x, stars[i].y)
+    
+         if (i > 0) {
+            for (let j = 0; j < i; j++){
+                stroke("WHITE")
+                line(stars[j].x,stars[j].y,stars[i].x, stars[i].y)
+            }
+        }
     }
 
 }
