@@ -45,11 +45,4 @@ class jumpingPlayer{
 		fill(this.col);
 		rect(this.x, this.y, this.w, this.h);
 	}
-	jump(){
-		// Jump on UP_ARROW
-		if (keyCode == this.upKey) {
-			this.ySpeed = -20;
-		}
-    }
-    
 }
