@@ -2,7 +2,7 @@ class ball{
     constructor(x,y){
         this.x = x;
         this.y = y;
-        this.r = random(20);
+        this.r = random(5,20);
         this.xSpeed = random(10);
         this.ySpeed = 0;
         this.a = 0.5;
