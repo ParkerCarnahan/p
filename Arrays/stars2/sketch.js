@@ -5,13 +5,6 @@ let stars;
 let GREY = 80;
 let RED = "#bb2a27";
 let GREEN = "#8cc542";
-le"use strict"
-
-let stars;
-
-let GREY = 80;
-let RED = "#bb2a27";
-let GREEN = "#8cc542";
 let BLUE = "#28a9e0";
 let ORANGE = "#faaf3b";
 let BROWN = "#aa6c39";
